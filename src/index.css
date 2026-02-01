@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  
+  --color-luxury-50: #faf9f7;
+  --color-luxury-100: #f5f3ef;
+  --color-luxury-200: #e8e4dc;
+  --color-luxury-300: #d4ccc0;
+  --color-luxury-400: #b8a995;
+  --color-luxury-500: #9d8a70;
+  --color-luxury-600: #7d6c55;
+  --color-luxury-700: #5c4f3d;
+  --color-luxury-800: #3d342a;
+  --color-luxury-900: #1f1a14;
+  
+  --color-gold-50: #fefbeb;
+  --color-gold-100: #fdf5c7;
+  --color-gold-200: #fce989;
+  --color-gold-300: #fad64b;
+  --color-gold-400: #f7c522;
+  --color-gold-500: #e8a910;
+  --color-gold-600: #c8830a;
+  --color-gold-700: #a05f0c;
+  --color-gold-800: #844b11;
+  --color-gold-900: #713e14;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #505050;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232, 169, 16, 0.4); }
+  50% { box-shadow: 0 0 20px 5px rgba(232, 169, 16, 0.2); }
+}
+
+@keyframes rotate360 {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s infinite;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #c8830a 0%, #fad64b 50%, #c8830a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Car shadow */
+.car-shadow {
+  filter: drop-shadow(0 50px 80px rgba(0, 0, 0, 0.8));
+}
+
+/* Progress bar */
+.progress-step {
+  position: relative;
+}
+
+.progress-step::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.3), transparent);
+}
+
+.progress-step:last-child::after {
+  display: none;
+}
